@@ -201,7 +201,7 @@ var billIds = {
                         drinksBill += price * quantity;
                         break;
                 }
-                if(category == 'Main' || category == 'Starters'){
+                if (category === 'Main' || category === 'Starters') {
                     if (isVegetarian == 'true') {
                         vegetarianBill += price * quantity;
                     } else {
