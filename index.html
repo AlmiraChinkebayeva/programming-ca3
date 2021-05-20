@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 1 - Continuous Assessment 3 (CA3)</title>
     <link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/page1.css"/>
@@ -11,14 +12,14 @@
     <header>
         <ul class="top-navbar">
 
-            <li class="navbar-title"><a href="JavaScript:void(0)">Continuous Assessment 3 (CA3)</a></li>
+            <li class="navbar-title"><a href="JavaScript:void(0)">CA3</a></li>
             <li><a href="page2.html">Page 2</a></li>
             <li><a class="active" href="JavaScript:void(0)">Page 1</a></li>
         </ul>
     </header>
 
-    <div class="container">
-        <div class="inner-container">
+    <div class="data-container">
+        <div class="container">
             <h1 class="container-title">Staff Password Validator</h1>
             <form class="password-validator-form">
                 <table>
@@ -52,12 +53,12 @@
             </form>
 
         </div>
-        <div class="inner-container">
+        <div class="container">
             <h1 class="container-title">Customers</h1>
             <div class="inner-container">
-                <h2 class="customer-name">Name: Lindorfo</h2>
-                <div class="customer-image">
-                    <img src="assets/images/customer_test_image.png" alt="customer image"/>
+                <h2 class="sub-heading">Name: Lindorfo</h2>
+                <div class="customer-data">
+                    <img class="customer-image" src="assets/images/customer_test_image.png" alt="customer image"/>
                 </div>
                 <div class="customer-data">
                     Phone Number: (26) 0385-0676
@@ -66,7 +67,7 @@
                     DOB: 1982-373198473298
                 </div>
                 <div class="customer-data">
-                Age: 39
+                    Age: 39
                 </div>
                 <div class="customer-data">
                     Email ID: abc@gmail.com
@@ -85,6 +86,64 @@
                 </div>
             </div>
 
+        </div>
+        <div class="container">
+            <h1 class="container-title">Menu Options</h1>
+            <div class="inner-container">
+                <table id="menu-table">
+                    <thead>
+                    <tr>
+                        <th>
+                            <h2 class="sub-heading">Starters</h2>
+                        </th>
+                        <th><h2 class="sub-heading">Quantity</h2></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th class="food-name">Chicken Wings</th>
+                        <td class="food-quantity">
+                            <input type="number" min="0" name="food-name" data-food="1" data-food-type="starters"
+                                   value="0" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="food-name">Broccoli (vegetarian)</th>
+                        <td class="food-quantity">
+                            <input type="number" min="0" name="food-name" data-food="2" data-food-type="starters"
+                                   value="0" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="food-name">Lollipops (vegetarian)</th>
+                        <td class="food-quantity">
+                            <input type="number" min="0" name="food-name" data-food="3" data-food-type="starters"
+                                   value="0" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="food-name">Beef strips</th>
+                        <td class="food-quantity">
+                            <input type="number" min="0" name="food-name" data-food="4" data-food-type="starters"
+                                   value="0" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="food-name">Bread</th>
+                        <td class="food-quantity">
+                            <input type="number" min="0" name="food-name" data-food="5" data-food-type="starters"
+                                   value="0" />
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
         </div>
     </div>
 

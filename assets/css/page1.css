@@ -9,6 +9,8 @@
     display: inline-block;
     box-sizing: border-box;
     width: 80%;
+    padding: 10px;
+
 }
 
 .inner-container {
@@ -23,7 +25,9 @@
 .container-title {
     color: #394646;
 }
-
+.sub-heading{
+    text-align: left;
+}
 /* Password Validator Style Start */
 .validator-label {
     font-size: 20px;
@@ -54,8 +58,26 @@
 .customer-data {
     font-size: 17px;
     padding: 10px;
-    border-bottom: 1px solid darkgray;
+    border-top: 1px solid darkgray;
 }
 
 /* Customer Data Style END */
 
+/* MENU Table START*/
+#menu-table{
+    width: 100%;
+}
+.food-name{
+    border-top: 1px solid darkgray ;
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.food-quantity{
+    text-align: left;
+    border-top: 1px solid darkgray ;
+}
+.food-quantity input{
+    padding: 5px;
+}
+/* MENU Table END*/
