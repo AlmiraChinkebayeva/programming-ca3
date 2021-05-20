@@ -1,34 +1,43 @@
-var foods = [
+var billIds = {
+        starterBillId: 'starters-bill',
+        mainBillId: 'main-bill',
+        drinksBillId: 'drinks-bill',
+        desertsBillId: 'desert-bill',
+        vegetarianBillId: 'vegetarian-bill',
+        nonVegetarianBillId: 'non-vegetarian-bill',
+        totalBillId: 'total-bill',
+    },
+    foods = [
         {
-            category: 'Starter',
+            category: 'Starters',
             dishes: [
                 {
                     id: 1,
                     name: 'Chicken Wings',
                     description: 'Chicken Wings',
                     vegetarian: false,
-                    cost: 12
+                    price: 12
                 },
                 {
                     id: 2,
                     name: 'Broccoli',
                     description: 'Boiled Broccoli',
                     vegetarian: true,
-                    cost: 5
+                    price: 5
                 },
                 {
                     id: 3,
                     name: 'Lollipops',
                     description: 'Lollipops',
                     vegetarian: true,
-                    cost: 2
+                    price: 2
                 },
                 {
                     id: 4,
                     name: 'Bread',
                     description: 'Bread',
                     vegetarian: false,
-                    cost: 6
+                    price: 6
                 }
             ]
         },
@@ -40,28 +49,28 @@ var foods = [
                     name: 'Grill Burger',
                     description: 'Double Stake Grill Burger',
                     vegetarian: false,
-                    cost: 25
+                    price: 25
                 },
                 {
                     id: 6,
                     name: 'Beef stake',
                     description: 'Beef stake',
                     vegetarian: false,
-                    cost: 30
+                    price: 30
                 },
                 {
                     id: 7,
                     name: 'Egg Fried Rice',
                     description: 'Egg Fried Rice',
                     vegetarian: false,
-                    cost: 15
+                    price: 15
                 },
                 {
                     id: 8,
                     name: 'Orecchiette Pasta with Broccoli Sauce',
                     description: 'a simple vegetarian pasta recipe with a flavorful Tuscan-style Broccoli Sauce! An easy and delicious vegetarian dinner recipe that highlights beautiful broccoli!',
                     vegetarian: true,
-                    cost: 20
+                    price: 20
                 },
             ]
         },
@@ -73,21 +82,21 @@ var foods = [
                     name: 'Ice Cream',
                     description: 'Vanila Ice Cream',
                     vegetarian: false,
-                    cost: 10
+                    price: 10
                 },
                 {
                     id: 10,
                     name: 'russian salad',
                     description: 'russian salad',
                     vegetarian: true,
-                    cost: 15
+                    price: 15
                 },
                 {
                     id: 11,
                     name: 'Molten Lava',
                     description: 'Molten Lava Served With Hot Chocolate',
                     vegetarian: false,
-                    cost: 30
+                    price: 30
                 }
             ]
         },
@@ -99,21 +108,21 @@ var foods = [
                     name: 'Coca Cola',
                     description: 'Vanila Ice Cream',
                     vegetarian: false,
-                    cost: 5
+                    price: 5
                 },
                 {
                     id: 13,
                     name: 'Sprite',
                     description: 'russian salad',
                     vegetarian: false,
-                    cost: 5
+                    price: 5
                 },
                 {
                     id: 14,
                     name: 'Mint Margarita',
                     description: 'Mint Margarita',
                     vegetarian: true,
-                    cost: 10
+                    price: 10
                 }
             ]
         }
@@ -143,11 +152,11 @@ var foods = [
                 }
                 html += '</th>';
                 html += '<td class="food-price">';
-                html += '€' + foods[i].dishes[j].cost;
+                html += '€' + foods[i].dishes[j].price;
                 html += '</td>';
                 html += '<td class="food-quantity">';
-                html += '<input class="food-quantity-input" data-id="' + foods[i].dishes[j].id + '" data-cetegory="' + foods[i].category + '"';
-                html += 'data-cost="' + foods[i].dishes[j].cost + '" data-vegetarian="' + foods[i].dishes[j].vegetarian + '" value="0" />';
+                html += '<input class="food-quantity-input" data-id="' + foods[i].dishes[j].id + '" data-category="' + foods[i].category + '"';
+                html += 'data-price="' + foods[i].dishes[j].price + '" data-vegetarian="' + foods[i].dishes[j].vegetarian + '" value="0" />';
                 html += '</td>';
                 html += '</tr>';
             }
@@ -158,7 +167,58 @@ var foods = [
         table.innerHTML = html;
     },
     calculateBill = function () {
+        var dishes = document.getElementsByClassName("food-quantity-input"),
+            price = 0,
+            quantity = 0,
+            category = 0,
+            isVegetarian = false,
+            totalBill = 0,
+            startersBill = 0,
+            mainBill = 0,
+            desertsBill = 0,
+            drinksBill = 0,
+            vegetarianBill = 0,
+            nonVegetarianBill = 0;
 
+        for (var i = 0; i < dishes.length; i++) {
+            quantity = dishes[i].value;
+            if (quantity > 0) {
+                price = dishes[i].getAttribute('data-price');
+                isVegetarian = dishes[i].getAttribute('data-vegetarian');
+                category = dishes[i].getAttribute('data-category');
+                totalBill += price * quantity;
+                switch (category) {
+                    case 'Main':
+                        mainBill += price * quantity;
+                        break;
+                    case 'Deserts':
+                        mainBill += price * quantity;
+                        break;
+                    case 'Starters':
+                        startersBill += price * quantity;
+                        break;
+                    case 'Drinks':
+                        drinksBill += price * quantity;
+                        break;
+                }
+                if(category == 'Main' || category == 'Starters'){
+                    if (isVegetarian == 'true') {
+                        vegetarianBill += price * quantity;
+                    } else {
+                        nonVegetarianBill += price * quantity;
+                    }
+                }
+
+
+            }
+        }
+        document.getElementById(billIds.totalBillId).innerHTML = totalBill;
+        document.getElementById(billIds.starterBillId).innerHTML = startersBill;
+        document.getElementById(billIds.mainBillId).innerHTML = mainBill;
+        document.getElementById(billIds.desertsBillId).innerHTML = desertsBill;
+        document.getElementById(billIds.drinksBillId).innerHTML = drinksBill;
+        document.getElementById(billIds.vegetarianBillId).innerHTML = vegetarianBill;
+        document.getElementById(billIds.nonVegetarianBillId).innerHTML = nonVegetarianBill;
     };
 
 
