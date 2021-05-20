@@ -21,7 +21,7 @@
     <div class="data-container">
         <div class="container">
             <h1 class="container-title">Staff Password Validator</h1>
-            <form class="password-validator-form">
+            <form class="password-validator-form" onsubmit="return validatePassword()">
                 <table>
                     <tr>
                         <th>
@@ -40,13 +40,12 @@
                     </tr>
                     <tr>
                         <th></th>
-                        <td>
-                            <div class="validator-errors">
-                                Please Fix the Following Errors
-                                <ul>
-                                    <li>Invalid Format</li>
-                                </ul>
+                        <td class="validator-errors-block">
+                            <div id="validator-errors">
                             </div>
+                            <div id="validator-success">
+                            </div>
+
                         </td>
                     </tr>
                 </table>

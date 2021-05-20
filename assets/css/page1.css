@@ -48,10 +48,15 @@
     color: white;
 }
 
-.validator-errors {
+#validator-errors {
     font-size: 17px;
     font-weight: bold;
     color: red;
+}
+#validator-success {
+    font-size: 17px;
+    font-weight: bold;
+    color: green;
 }
 
 /* Password Validator Style END */
