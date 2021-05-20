@@ -114,6 +114,7 @@ dishes = [
 ];
 $(document).ready(function () {
     populdateData();
+    $('#dish-table').DataTable();
 
 });
 
@@ -139,7 +140,10 @@ function getDishRow(dish) {
 
 $('#new-dish-form').submit(function (e) {
     e.preventDefault();
-    var id = dishes.length,
+
+    var table = $('#dish-table').DataTable();
+    table.destroy();
+    var id = dishes.length + 1,
         name = $('#dish-name').val(),
         description = $('#dish-description').val(),
         category = $('#dish-category').val(),
@@ -161,4 +165,6 @@ $('#new-dish-form').submit(function (e) {
         icon: "success",
         title: "Dish Added Successfully!",
     });
+    $('#dish-table').DataTable();
+
 });
