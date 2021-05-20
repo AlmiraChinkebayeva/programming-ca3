@@ -127,6 +127,72 @@ var billIds = {
             ]
         }
     ],
+    fetchCustomersData = function () {
+        var apiUrl = 'https://randomuser.me/api?results=5';
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", apiUrl, false); // false for synchronous request
+        xmlHttp.send(null);
+        response = JSON.parse(xmlHttp.responseText);
+        var html = '';
+        if (response && response.results && response.results.length) {
+            for (var i = 0; i < response.results.length; i++) {
+                html += '<div class="inner-container" >';
+
+                html += '<h2 class="sub-heading">Name: ';
+                var customerName = response.results[i].name.title + ' ' + response.results[i].name.first + ' ' + response.results[i].name.last;
+                html += customerName;
+                html += '</h2>';
+
+                html += '<div class="customer-data">';
+                html += '<img class="customer-image" src="' + response.results[i].picture.thumbnail + '" alt="' + customerName + '"/>';
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'Phone Number: ';
+                html += response.results[i].phone;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'DOB ';
+                html += response.results[i].dob.date;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'Age ';
+                html += response.results[i].dob.age;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'Email ID: ';
+                html += response.results[i].email;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'Gender: ';
+                html += response.results[i].gender;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'City: ';
+                html += response.results[i].city;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'Country: ';
+                html += response.results[i].country;
+                html += '</div>';
+
+                html += '<div class="customer-data">';
+                html += 'PostCode: ';
+                html += response.results[i].postcode;
+                html += '</div>';
+
+                html += '</div>';
+            }
+        }
+        document.getElementById('customers-container').innerHTML = html;
+
+    },
     populateRecipes = function () {
         var html = '';
         for (var i = 0; i < foods.length; i++) {
@@ -163,8 +229,7 @@ var billIds = {
             html += '</tbody>';
         }
 
-        var table = document.getElementById('menu-table');
-        table.innerHTML = html;
+        document.getElementById('menu-table').innerHTML = html;
     },
     calculateBill = function () {
         var dishes = document.getElementsByClassName("food-quantity-input"),
@@ -202,7 +267,7 @@ var billIds = {
                         break;
                 }
                 if (category === 'Main' || category === 'Starters') {
-                    if (isVegetarian == 'true') {
+                    if (isVegetarian === 'true') {
                         vegetarianBill += price * quantity;
                     } else {
                         nonVegetarianBill += price * quantity;
@@ -221,5 +286,5 @@ var billIds = {
         document.getElementById(billIds.nonVegetarianBillId).innerHTML = nonVegetarianBill;
     };
 
-
+fetchCustomersData();
 populateRecipes();
