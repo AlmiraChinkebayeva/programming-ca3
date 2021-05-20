@@ -16,6 +16,42 @@
             <li><a class="active" href="JavaScript:void(0)">Page 1</a></li>
         </ul>
     </header>
+
+    <div class="container">
+        <div class="inner-container">
+            <h1 class="container-title">Staff Password Validator</h1>
+            <form class="password-validator-form">
+                <table>
+                    <tr>
+                        <th>
+                            <label class="validator-label" for="validator-input">Enter password:</label>
+                        </th>
+                        <td>
+                            <input type="text" name="validator-input" class="validator-input" id="validator-input" value="" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input class="validator-submit" type="submit" value="Check Password" name="submit">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <div class="validator-errors">
+                                Please Fix the Following Errors
+                                <ul>
+                                    <li>Invalid Format</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="assets/js/global.js"></script>

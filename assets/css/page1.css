@@ -1,0 +1,44 @@
+*{
+    font-family: "arial";
+
+}
+.container{
+    margin: 20px 10%;
+    border: 1px solid darkgray;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.inner-container{
+    display: inline-block;
+    margin: 20px 10%;
+    width: 80%;
+    border: 1px solid darkgray;
+    padding: 10px;
+
+}
+.container-title{
+    color: #394646;
+}
+.validator-label{
+    font-size: 20px;
+    color: #394646;
+}
+
+.validator-input{
+    font-size: 17px;
+    padding: 2px;
+}
+
+.validator-submit{
+    font-size: 17px;
+    padding: 2px 5px;
+    background: #bf80ff;
+    color: white;
+}
+.validator-errors{
+    font-size: 17px;
+    font-weight: bold;
+    color: red;
+}
