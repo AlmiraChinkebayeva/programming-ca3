@@ -3,20 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Page 2 - Continuous Assessment 3 (CA3)</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/global.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/page2.css" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/page2.css"/>
 </head>
 <body>
 <div class="main-container">
     <header>
         <ul class="top-navbar">
 
-            <li class="navbar-title"><a href="JavaScript:void(0)">Continuous Assessment 3 (CA3)</a></li>
+            <li class="navbar-title"><a href="JavaScript:void(0)">CA3</a></li>
             <li><a class="active" href="JavaScript:void(0)">Page 2</a></li>
             <li><a href="index.html">Page 1</a></li>
         </ul>
     </header>
 </div>
+
+<div class="container">
+    <h1>This Page is Using JQuery and Bootstrap with JQuery Data Table and Sweet Alert</h1>
+    <h2>Here we will add up a new dish in the list that will add up in the Data Table </h2>
+    <hr/>
+    <h3>Add New Dish </h3>
+    <div class="inner-container">
+        <form id="new-dish-form">
+            <div class="form-group">
+                <label for="dish-name">Name:</label>
+                <input type="text" class="form-control" id="dish-name" placeholder="Enter Dish Name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="dish-description">Description:</label>
+                <input type="text" class="form-control" id="dish-description" placeholder="Enter Description"
+                       name="description">
+            </div>
+            <div class="form-group">
+                <label for="dish-category">Choose Category:</label>
+                <select class="form-control" id="dish-category">
+                    <option value="Starters">Starter</option>
+                    <option value="Deserts">Main</option>
+                    <option value="Deserts">Desert</option>
+                    <option value="Drinks">Drink</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dish-price">Price(€):</label>
+                <input type="text" class="form-control" id="dish-price" placeholder="Enter Price"
+                       name="price">
+            </div>
+            <div class="checkbox">
+                <label><input id="dish-vegetarian" value="1" type="checkbox"> Vegetarian</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Dish</button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <table class="table" id="dish-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Vegetarian</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody id="dish-table-data">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/sweetalert.min.js"></script>
 
 <script type="text/javascript" src="assets/js/global.js"></script>
 <script type="text/javascript" src="assets/js/page2.js"></script>

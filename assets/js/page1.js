@@ -129,10 +129,10 @@ var billIds = {
     ],
     validatePassword = function () {
         var password = document.getElementById('validator-input').value;
-        if(password.length > 8 && password.match(/[a-zA-Z0-9+]/g)){
+        if (password.length > 8 && password.match(/[a-zA-Z0-9+]/g)) {
             document.getElementById('validator-success').innerHTML = 'Password is in Correct Format';
             document.getElementById('validator-errors').innerHTML = '';
-        }else{
+        } else {
             document.getElementById('validator-success').innerHTML = '';
             document.getElementById('validator-errors').innerHTML = '*Invalid format, please reenter';
         }
