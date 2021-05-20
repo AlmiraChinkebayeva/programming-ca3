@@ -1,8 +1,9 @@
-*{
+* {
     font-family: "arial";
 
 }
-.container{
+
+.container {
     margin: 20px 10%;
     border: 1px solid darkgray;
     display: inline-block;
@@ -10,7 +11,7 @@
     width: 80%;
 }
 
-.inner-container{
+.inner-container {
     display: inline-block;
     margin: 20px 10%;
     width: 80%;
@@ -18,27 +19,43 @@
     padding: 10px;
 
 }
-.container-title{
+
+.container-title {
     color: #394646;
 }
-.validator-label{
+
+/* Password Validator Style Start */
+.validator-label {
     font-size: 20px;
     color: #394646;
 }
 
-.validator-input{
+.validator-input {
     font-size: 17px;
     padding: 2px;
 }
 
-.validator-submit{
+.validator-submit {
     font-size: 17px;
     padding: 2px 5px;
     background: #bf80ff;
     color: white;
 }
-.validator-errors{
+
+.validator-errors {
     font-size: 17px;
     font-weight: bold;
     color: red;
 }
+
+/* Password Validator Style END */
+
+/* Customer Data Style START */
+.customer-data {
+    font-size: 17px;
+    padding: 10px;
+    border-bottom: 1px solid darkgray;
+}
+
+/* Customer Data Style END */
+
