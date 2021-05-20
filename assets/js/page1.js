@@ -129,9 +129,29 @@ var foods = [
             html += foods[i].category;
             html += '</h2>';
             html += '</th>';
+            html += '<th><h2 class="sub-heading">Price</h2></th>';
             html += '<th><h2 class="sub-heading">Quantity</h2></th>';
             html += '</tr>';
             html += '</thead>';
+            html += '<tbody>';
+            for (var j = 0; j < foods[i].dishes.length; j++) {
+                html += '<tr>';
+                html += '<th class="food-name">';
+                html += foods[i].dishes[j].name;
+                if (foods[i].dishes[j].vegetarian) {
+                    html += ' (vegetarian)';
+                }
+                html += '</th>';
+                html += '<td class="food-price">';
+                html += '€' + foods[i].dishes[j].cost;
+                html += '</td>';
+                html += '<td class="food-quantity">';
+                html += '<input class="food-quantity-input" data-id="' + foods[i].dishes[j].id + '" data-cetegory="' + foods[i].category + '"';
+                html += 'data-cost="' + foods[i].dishes[j].cost + '" data-vegetarian="' + foods[i].dishes[j].vegetarian + '" value="0" />';
+                html += '</td>';
+                html += '</tr>';
+            }
+            html += '</tbody>';
         }
 
         var table = document.getElementById('menu-table');
