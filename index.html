@@ -91,9 +91,45 @@
             <h1 class="container-title">Menu Options</h1>
             <div class="inner-container">
                 <table id="menu-table">
-                   
                 </table>
+            </div>
+            <div class="inner-container">
+                <table id="bills-table">
+                    <tr>
+                        <th class="bill-name">Total Bill</th>
+                        <td class="bill-value" id="total-bill">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="bill-name">Starters</th>
+                        <td class="bill-value" id="starters-bill">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="bill-name">Main</th>
+                        <td class="bill-value" id="main-bill">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="bill-name">Dessert</th>
+                        <td class="bill-value" id="desert-bill">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="bill-name">Drinks</th>
+                        <td class="bill-value" id="drinks-bill">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="bill-name">Vegetarian cost:</th>
+                        <td class="bill-value" id="vegitarian-bill">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th class="bill-name">Non-Vegetarian cost:</th>
+                        <td class="bill-value" id="non-vegitarian-bill">&nbsp;</td>
+                    </tr>
 
+                    <tr>
+                        <th class="bill-name">&nbsp;</th>
+                        <td ><button id="bill-button" onclick="calculateBill()" >Calculate Bill</button> </td>
+                    </tr>
+
+                </table>
             </div>
         </div>
     </div>

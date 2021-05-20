@@ -156,6 +156,9 @@ var foods = [
 
         var table = document.getElementById('menu-table');
         table.innerHTML = html;
+    },
+    calculateBill = function () {
+
     };
 
 

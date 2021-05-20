@@ -25,9 +25,11 @@
 .container-title {
     color: #394646;
 }
-.sub-heading{
+
+.sub-heading {
     text-align: left;
 }
+
 /* Password Validator Style Start */
 .validator-label {
     font-size: 20px;
@@ -64,24 +66,58 @@
 /* Customer Data Style END */
 
 /* MENU Table START*/
-#menu-table{
+#menu-table {
     width: 100%;
 }
-.food-name{
-    border-top: 1px solid darkgray ;
+
+.food-name {
+    border-top: 1px solid darkgray;
     text-align: left;
     padding: 10px 5px;
 }
 
-.food-price{
+.food-price {
     text-align: center;
-    border-top: 1px solid darkgray ;
+    border-top: 1px solid darkgray;
 }
-.food-quantity{
+
+.food-quantity {
     text-align: left;
-    border-top: 1px solid darkgray ;
+    border-top: 1px solid darkgray;
 }
-.food-quantity input{
+
+.food-quantity input {
     padding: 5px;
 }
+
 /* MENU Table END*/
+/* Bills Table Start*/
+#bills-table {
+    width: 100%;
+}
+
+.bill-name {
+    text-align: right;
+    padding-right: 20px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.bill-value {
+    display: inline-block;
+    width: 50%;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#bill-button {
+
+    font-size: 17px;
+    padding: 5px 15px;
+    background: #bf80ff;
+    color: white;
+}
+
+/* Bills Table END*/
+
